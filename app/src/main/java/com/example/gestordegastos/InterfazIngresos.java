@@ -23,18 +23,9 @@ public class InterfazIngresos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interfaz_ingresos);
-
-        // Get the Intent that started this activity and extract the string
-        //Intent intent = getIntent();
-        //String message = intent.getStringExtra(Principio.EXTRA_MESSAGE);
-
-        // Capture the layout's TextView and set the string as its text
-        // TextView textView = findViewById(R.id.CantidadInicial2);
-        //textView.setText(message);
-
-        expensesTextView = findViewById(R.id.Historial2);
         preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 
+       // expensesTextView = findViewById(R.id.textViewNombre); // Corrección: inicializar expensesTextView
         displayExpenses();
     }
 
@@ -43,14 +34,14 @@ public class InterfazIngresos extends AppCompatActivity {
         expensesTextView.setText(expenseList);
     }
 
-
     public void AgregarMovimiento(View view){
         Intent intent = new Intent(view.getContext(), AgregarGastos.class);
         view.getContext().startActivity(intent);
     }
-    public void Gastos(View view){
+
+    public void IrGastos(View view){
         Intent intent = new Intent(view.getContext(), InterfazGastos.class);
         view.getContext().startActivity(intent);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
-
 }

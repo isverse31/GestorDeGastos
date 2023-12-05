@@ -1,104 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     android:background="#7B9C1B"
-    android:backgroundTint="#7B9C1B"
     android:orientation="vertical"
     tools:context=".InterfazIngresos">
 
-    <LinearLayout
-        android:layout_width="371dp"
-        android:layout_height="190dp"
-        android:background="@drawable/finanzas2"
-        ></LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/finanzas2"/>
 
         <TextView
-            android:layout_width="180dp"
-            android:layout_height="42dp"
-            android:onClick="Ingresos"
+            android:id="@+id/Gastos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:onClick="IrGastos"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="211dp"
             android:text="Gastos"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="33dp"
-            tools:layout_editor_absoluteY="271dp" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
-            android:layout_width="101dp"
-            android:layout_height="35dp"
+            android:id="@+id/ingresos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="206dp"
+            android:layout_marginEnd="49dp"
             android:text="Ingresos"
+            android:textColor="@color/black"
             android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="351dp"
-        android:layout_height="160dp"
-        android:background="@drawable/fondo1">
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:gravity="center"
+            android:id="@+id/Gastos3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingresos"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
             android:text="Total ="
-            android:textColor="@android:color/white"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:gravity="end"
+            android:id="@+id/CantidadInicialIngresos"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingresos"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
             android:inputType="number"
             android:text="$0"
-            android:textColor="@android:color/white"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        ></LinearLayout>
-
-    <ScrollView
-        android:layout_width="360dp"
-        android:layout_height="160dp"
-        android:scrollbars="vertical">
-
-        <LinearLayout
-            android:layout_width="355dp"
+        <TextView
+            android:id="@+id/Restante"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/fondo1"
-            android:orientation="vertical">
+            android:layout_below="@id/Gastos3"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="73dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/Historial2"
+        <TextView
+            android:id="@+id/Restante2"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CantidadInicialIngresos"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="6dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:id="@+id/scrollable"
+            android:layout_width="wrap_content"
+            android:layout_height="193dp"
+            android:layout_below="@+id/Restante2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="31dp"
+            android:backgroundTint="#79A843"
+            android:background="@drawable/rounded"
+            android:scrollbars="vertical">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="No hay movimientos"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/Historial2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="No hay movimientos"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="389dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="AgregarMovimiento"
-        app:layout_constraintBottom_toBottomOf="@+id/Historial2"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/mas" />
+        <Button
+            android:id="@+id/boton"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scrollable"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="89dp"
+            android:gravity="center"
+            android:backgroundTint="#60C34A"
+            android:onClick="AgregarMovimientoIngreso"
+            android:text="Agregar Ingresos" />
 
+    </RelativeLayout>
 
-</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        android:background="@drawable/fondo1"
+        app:menu="@menu/nav_menu"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

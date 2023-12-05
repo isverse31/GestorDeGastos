@@ -11,6 +11,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -78,8 +79,18 @@ public class DashboardActivity extends AppCompatActivity {
 
         // Crear una lista de entradas de datos para el gráfico
         List<BarEntry> entries = new ArrayList<>();
+        List<String> labels = new ArrayList<>(); // Lista para almacenar los nombres/etiquetas de las posiciones de imagen
+
+        // Mapa para asignar nombres a las posiciones de imagen
+        Map<Integer, String> nombresImagenes = new HashMap<>();
+        nombresImagenes.put(0, "Comida");
+        nombresImagenes.put(1, "Ropa");
+        nombresImagenes.put(2, "Salud");
+        nombresImagenes.put(3, "Otro");
+
         for (Map.Entry<Integer, Integer> entry : frecuenciaImagenes.entrySet()) {
             entries.add(new BarEntry(entry.getKey(), entry.getValue()));
+            labels.add(nombresImagenes.get(entry.getKey())); // Obtener el nombre de la imagen
         }
 
         // Configurar el conjunto de datos y el gráfico de barras
@@ -91,6 +102,7 @@ public class DashboardActivity extends AppCompatActivity {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setGranularity(1f);
         xAxis.setLabelRotationAngle(45f);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels)); // Asignar las etiquetas al eje X
 
         // Configurar el gráfico y mostrar
         barChart.setData(barData);
@@ -111,4 +123,5 @@ public class DashboardActivity extends AppCompatActivity {
 
         return frecuenciaImagenes;
     }
+
 }

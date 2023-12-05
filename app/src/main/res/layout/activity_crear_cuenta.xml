@@ -29,6 +29,7 @@
             android:layout_width="287dp"
             android:layout_height="47dp"
             android:ems="10"
+            android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:background="@drawable/rounded"
             android:hint="ejemplo: reyes@gmail.com"
@@ -48,18 +49,29 @@
             app:layout_constraintBottom_toTopOf="@+id/Contrasenia2"
             tools:layout_editor_absoluteX="60dp" />
 
-
-        <EditText
-            android:id="@+id/Contrasenia2"
+        <LinearLayout
             android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:textColor="@color/black"
-            android:background="@drawable/rounded"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="296dp" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/Contrasenia2"
+                android:layout_width="259dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:paddingLeft="16dp"
+                android:inputType="textPassword"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:id="@+id/toggleButton"
+                android:layout_width="43dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Toggle Password Visibility"
+                android:src="@drawable/ic_visibility_off" />
+        </LinearLayout>
 
 
         <TextView
@@ -76,6 +88,7 @@
             android:layout_width="287dp"
             android:layout_height="53dp"
             android:ems="10"
+            android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:background="@drawable/rounded"
             android:inputType="textPassword"
@@ -103,6 +116,7 @@
             android:textColor="@color/black"
             android:background="@drawable/rounded"
             app:layout_constraintEnd_toEndOf="parent"
+            android:paddingLeft="16dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="554dp" />
 
@@ -115,15 +129,16 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/cancel_button"
+            android:id="@+id/CancelarCuenta"
             android:layout_width="159dp"
             android:layout_height="match_parent"
-            android:onClick="Sesion"
+            android:backgroundTint="#F44336"
             android:text="Cancelar" />
 
         <Button
             android:id="@+id/AceptarCuenta"
             android:layout_width="180dp"
+            android:backgroundTint="#60C34A"
             android:layout_height="match_parent"
             android:text="Aceptar" />
 

@@ -23,15 +23,19 @@
 
         <TextView
             android:id="@+id/Gastos"
-            android:layout_width="wrap_content"
+            android:layout_width="391dp"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/ingresos"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="11dp"
             android:layout_marginTop="211dp"
+            android:layout_marginEnd="-40dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
             android:text="Gastos"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/ingresos"
@@ -41,8 +45,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="206dp"
             android:layout_marginEnd="49dp"
-            android:onClick="Gastos"
-            android:text="Ingresos"
+            android:onClick="btnIngresos"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -52,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ingresos"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="90dp"
             android:text="Total ="
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
@@ -61,7 +64,7 @@
             android:id="@+id/CantidadInicial2"
             android:layout_width="124dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ingresos"
+            android:layout_below="@id/Gastos"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="72dp"
             android:layout_marginEnd="16dp"
@@ -77,12 +80,11 @@
             android:layout_below="@id/Gastos3"
             android:layout_marginStart="16dp"
             android:layout_marginTop="73dp"
-            android:text="Gasto ="
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/Restante2"
+            android:id="@+id/SumadeGastos"
             android:layout_width="136dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/CantidadInicial2"
@@ -91,21 +93,21 @@
             android:layout_marginEnd="6dp"
             android:ems="10"
             android:inputType="number"
-            android:text="$590"
             android:textColor="#FF0000"
             android:textSize="20sp" />
 
         <ScrollView
             android:id="@+id/scrollable"
             android:layout_width="wrap_content"
-            android:layout_height="193dp"
-            android:layout_below="@+id/Restante2"
+            android:layout_height="151dp"
+            android:layout_below="@+id/SumadeGastos"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="31dp"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="31dp"
+            android:layout_marginEnd="30dp"
             android:background="@drawable/rounded"
+            android:backgroundTint="#79A843"
             android:scrollbars="vertical">
 
             <LinearLayout
@@ -128,6 +130,7 @@
         <Button
             android:id="@+id/boton"
             android:layout_width="239dp"
+            android:backgroundTint="#60C34A"
             android:layout_height="wrap_content"
             android:layout_below="@+id/scrollable"
             android:layout_alignParentStart="true"
@@ -146,6 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@drawable/fondo1"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"/>
 

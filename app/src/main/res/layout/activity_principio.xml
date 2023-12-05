@@ -28,7 +28,7 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:gravity="center"
-            android:text="Puede agregar más en la Sección de Ingresos"
+            android:text="Si quiere agregar una cantidad mayor, vuelva a iniciar Sesión"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -68,7 +68,8 @@
             android:id="@+id/ButtonIntroducir"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:text="Continuar" />
+            android:text="Continuar"
+            android:backgroundTint="#60C34A"/>
 
     </LinearLayout>
 

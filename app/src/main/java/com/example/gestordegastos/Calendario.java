@@ -1,15 +1,11 @@
 package com.example.gestordegastos;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.CalendarView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class Calendario extends AppCompatActivity {
@@ -59,7 +57,7 @@ public class Calendario extends AppCompatActivity {
     }
 
     private void mostrarGastosPorFecha(String selectedDate) {
-        DatabaseReference gastosRef = mDatabase.child("Users").child(userID).child("Gastos").child(userID);
+        DatabaseReference gastosRef = mDatabase.child("Users").child(userID).child("Gastos");
 
         gastosRef.orderByChild("fecha").equalTo(selectedDate).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -67,17 +65,21 @@ public class Calendario extends AppCompatActivity {
                 StringBuilder gastosPorFecha = new StringBuilder();
 
                 for (DataSnapshot gastoSnapshot : dataSnapshot.getChildren()) {
+                    // Ajusta el nombre de la clase Gasto a lo que tengas en tu código
+                    // Aquí estoy asumiendo que tu clase Gasto tiene un constructor sin argumentos (necesario para Firebase)
                     Gasto gasto = gastoSnapshot.getValue(Gasto.class);
 
-                    // Agregar la información del gasto al StringBuilder
-                    gastosPorFecha.append(gasto.getFecha())
-                            .append(": -$")
-                            .append(gasto.getCantidad())
-                            .append(" ")
-                            .append(gasto.getDescripcion())
-                            .append(" (Image: ")
-                            .append(gasto.getImagen())
-                            .append(")\n");
+                    if (gasto != null) {
+                        // Agregar la información del gasto al StringBuilder
+                        gastosPorFecha.append(gasto.getFecha())
+                                .append(": -$")
+                                .append(gasto.getCantidad())
+                                .append(" ")
+                                .append(gasto.getDescripcion())
+                                .append(" (Image: ")
+                                .append(gasto.getImagen())
+                                .append(")\n");
+                    }
                 }
 
                 // Mostrar los gastos asociados a la fecha seleccionada en el TextView VerGastos
@@ -87,10 +89,9 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Manejar errores de lectura desde la base de datos
-                // Puedes agregar un Toast o log para indicar el error si es necesario
+                Log.e("Calendario", "Error al obtener gastos desde Firebase: " + databaseError.getMessage());
             }
         });
-
-
     }
+
 }

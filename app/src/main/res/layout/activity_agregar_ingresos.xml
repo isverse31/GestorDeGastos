@@ -16,9 +16,9 @@
         android:gravity="center">
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="349dp"
             android:layout_height="40dp"
-            android:text="Añadir Movimiento"
+            android:text="Añadir Ingresos"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -36,10 +36,10 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="113dp"
                 android:layout_height="42dp"
-                android:text="Gastos"
                 android:onClick="AgregarGasto"
+                android:text="Gastos"
                 android:textSize="26sp"
                 tools:layout_editor_absoluteX="33dp"
                 tools:layout_editor_absoluteY="271dp" />
@@ -58,7 +58,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/CantidadMovimiento"
+                android:id="@+id/CantidadMovimientoIngresos"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:hint="$0"
@@ -82,7 +82,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="¿En qué se va a Gastar?"
+                android:text="¿De donde se va a ingresar?"
                 android:textSize="22sp"/>
         </LinearLayout>
         <Spinner
@@ -97,10 +97,12 @@
             android:layout_height="wrap_content">
 
         </LinearLayout>
+
         <EditText
             android:id="@+id/descriptionEditText"
-            android:layout_width="300dp"
-            android:layout_height="40dp" />
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:hint="Breve descrpción. Ejemplo: Trabajo"/>/>
     </LinearLayout>
 
     <LinearLayout
@@ -111,8 +113,9 @@
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_weight="1"
+            android:backgroundTint="#60C34A"
             android:onClick="BotonAgregarIngreso"
-            android:text="Button" />
+            android:text="Agregar Ingreso" />
 
     </LinearLayout>
 

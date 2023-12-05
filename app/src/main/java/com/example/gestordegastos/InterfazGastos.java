@@ -45,14 +45,14 @@ public class InterfazGastos extends AppCompatActivity {
 
     private TextView expensesTextView;
     private ImageView imageViewProfile;
-    private Button CerrarSesion;
 
     private FirebaseAuth rAuth;
     private DatabaseReference mDatabase;
     private StorageReference storageReference;
-    private static final int PICK_IMAGE_REQUEST = 1;
+
     private Uri imageUri;
 
+    private static final int PICK_IMAGE_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +73,8 @@ public class InterfazGastos extends AppCompatActivity {
             return true;
         });
 
+
+        TextView sumadeGastosTextView = findViewById(R.id.SumadeGastos);
         expensesTextView = findViewById(R.id.CantidadInicial2);
         TextView historialTextView = findViewById(R.id.Historial);
         preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -204,8 +206,7 @@ public class InterfazGastos extends AppCompatActivity {
 
     private void mostrarCantidadInicial(String userID) {
         DatabaseReference userRef = mDatabase.child(userID);
-
-        userRef.child("CantidadInicial1").addListenerForSingleValueEvent(new ValueEventListener() {
+        userRef.child("CantidadInicial1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -248,8 +249,7 @@ public class InterfazGastos extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Manejar errores de lectura desde la base de datos
-                // Puedes agregar un Toast o log para indicar el error si es necesario
+                Toast.makeText(InterfazGastos.this, "Error al mostrar Información", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -260,15 +260,10 @@ public class InterfazGastos extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
-    public void Ingresos(View view) {
+    public void btnIngresos(View view) {
         Intent intent = new Intent(view.getContext(), InterfazIngresos.class);
         view.getContext().startActivity(intent);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-    }
-
-    public void VerCalendario(View view) {
-        Intent intent = new Intent(view.getContext(), Calendario.class);
-        view.getContext().startActivity(intent);
+        finish();
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 

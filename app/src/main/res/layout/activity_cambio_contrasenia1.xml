@@ -30,25 +30,13 @@
             android:layout_width="290dp"
             android:layout_height="40dp"
             android:ems="10"
+            android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:background="@drawable/rounded"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="368dp" />
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="26dp"
-            android:text="Num. Teléfono" />
-
-        <EditText
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:textColor="@color/black"
-            android:background="@drawable/rounded"
-            android:inputType="number" />
 
     </LinearLayout>
 
@@ -64,6 +52,7 @@
             android:layout_height="wrap_content"
             android:onClick="Cambiocontrasenia2"
             android:text="Continuar"
+            android:backgroundTint="#60C34A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="630dp" />

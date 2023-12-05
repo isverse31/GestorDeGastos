@@ -45,6 +45,7 @@
             android:layout_width="290dp"
             android:layout_height="40dp"
             android:ems="10"
+            android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +64,7 @@
             android:layout_width="293dp"
             android:layout_height="40dp"
             android:ems="10"
+            android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:inputType="textPassword"
             android:background="@drawable/rounded"
@@ -105,6 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aceptar"
+            android:backgroundTint="#60C34A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="630dp" />

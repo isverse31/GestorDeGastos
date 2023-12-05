@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -63,6 +64,7 @@ public class AgregarGastos extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         setupImageSpinner();
+
     }
 
     private void setupImageSpinner() {
@@ -129,8 +131,12 @@ public class AgregarGastos extends AppCompatActivity {
             preferences.edit().putString(EXPENSES_KEY, currentExpenses).apply();
             expenseEditText.setText("");
             descriptionEditText.setText("");
+
+            finish();
+
         }
         Intent intent = new Intent(view.getContext(), InterfazGastos.class);
+        intent.putExtra("gasto Actualizado", true);
         view.getContext().startActivity(intent);
     }
 
