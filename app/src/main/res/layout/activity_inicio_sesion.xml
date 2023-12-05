@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DEE4D7"
+    android:backgroundTint="#7B9C1B"
+    android:orientation="vertical"
+    tools:context=".InicioSesion">
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="220dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="171dp"
+            android:src="@drawable/inicio_de_sesion"
+            android:visibility="visible"
+            app:circularflow_angles="50"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="112dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="26dp"
+            android:backgroundTint="#F1EBEB"
+            android:text="Correo o Usuario"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="335dp" />
+
+        <EditText
+            android:id="@+id/Correo"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/rounded"
+            tools:layout_editor_absoluteY="368dp" />
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="26dp"
+            android:text="Contraseña" />
+
+        <EditText
+            android:id="@+id/Contrasenia"
+            android:layout_width="293dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="CrearCuenta"
+            android:text="Crear Cuenta" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="Cambiocontrasenia1"
+            android:text="¿Se te olvido la contraseña?" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AceptarInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="630dp" />
+
+    </LinearLayout>
+</LinearLayout>

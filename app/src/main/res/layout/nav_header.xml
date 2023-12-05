@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="160dp"
+android:background="@color/purple_700"
+android:gravity="bottom"
+android:padding="16dp"
+android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+<ImageView
+    android:id="@+id/perfil"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:src="@drawable/comida"
+    android:layout_marginRight="16dp"/>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido/a!"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+</LinearLayout>
+
+
+</LinearLayout>

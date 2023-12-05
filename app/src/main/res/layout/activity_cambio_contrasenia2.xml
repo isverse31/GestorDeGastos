@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CAF50"
+    android:backgroundTint="#7B9C1B"
+    android:orientation="vertical"
+    tools:context=".CambioContrasenia1">
+
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="26dp"
+            android:backgroundTint="#F1EBEB"
+            android:text="Nueva Contraseña"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="335dp" />
+
+        <EditText
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:background="@drawable/rounded"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="368dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="26dp"
+            android:text="Verificar Contraseña" />
+
+        <EditText
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:background="@drawable/rounded"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AceptarInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Sesion"
+            android:text="Aceptar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="630dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

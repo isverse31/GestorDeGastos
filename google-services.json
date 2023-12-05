@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "194190206694",
+    "firebase_url": "https://gestiongastos-3f812-default-rtdb.firebaseio.com",
+    "project_id": "gestiongastos-3f812",
+    "storage_bucket": "gestiongastos-3f812.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194190206694:android:35c132f7c3e67e14273d27",
+        "android_client_info": {
+          "package_name": "com.example.finanzas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5WuVwjnbvTGkHkPvLkbHf5_12cOBg1To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194190206694:android:07e24fd976d3700e273d27",
+        "android_client_info": {
+          "package_name": "com.example.gestionargastos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5WuVwjnbvTGkHkPvLkbHf5_12cOBg1To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194190206694:android:13a68931fe415e72273d27",
+        "android_client_info": {
+          "package_name": "com.example.gestordegastos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5WuVwjnbvTGkHkPvLkbHf5_12cOBg1To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

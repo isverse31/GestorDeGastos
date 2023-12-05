@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7B9C1B"
+    android:backgroundTint="#7B9C1B"
+    android:orientation="vertical"
+    tools:context=".InterfazIngresos">
+
+    <LinearLayout
+        android:layout_width="371dp"
+        android:layout_height="190dp"
+        android:background="@drawable/finanzas2"
+        ></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="42dp"
+            android:onClick="Ingresos"
+            android:text="Gastos"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="271dp" />
+
+        <TextView
+            android:layout_width="101dp"
+            android:layout_height="35dp"
+            android:text="Ingresos"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="351dp"
+        android:layout_height="160dp"
+        android:background="@drawable/fondo1">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Total ="
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:gravity="end"
+            android:inputType="number"
+            android:text="$0"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        ></LinearLayout>
+
+    <ScrollView
+        android:layout_width="360dp"
+        android:layout_height="160dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Historial2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="No hay movimientos"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="AgregarMovimiento"
+        app:layout_constraintBottom_toBottomOf="@+id/Historial2"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/mas" />
+
+
+</LinearLayout>
